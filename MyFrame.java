@@ -26,6 +26,21 @@ public class MyFrame extends JFrame implements KeyListener{
 			drawing.moveDown();
 			System.out.println("pos: " + drawing.x + ", " + drawing.y);
 		}
+
+		else if(e.getKeyCode() == KeyEvent.VK_S){
+			drawing.smrslt();
+			System.out.println("smrslt");
+		}
+
+		else if(e.getKeyCode() == KeyEvent.VK_SPACE){
+			drawing.jump();
+			System.out.println("jump");
+		}
+
+		else if(e.getKeyCode() == KeyEvent.VK_C){
+			drawing.crouch();
+			System.out.println("crouch");
+		}
     }
 
     public void keyReleased(KeyEvent e){
@@ -38,7 +53,7 @@ public class MyFrame extends JFrame implements KeyListener{
 	
 	public static void main(String args[]){
 		MyFrame gameFrame = new MyFrame();
-		gameFrame.setSize(600,600);
+		gameFrame.setSize(500,333);
 		gameFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		gameFrame.setVisible(true);
 		gameFrame.getContentPane().add(drawing);
