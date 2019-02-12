@@ -41,6 +41,30 @@ public class MyFrame extends JFrame implements KeyListener{
 			drawing.crouch();
 			System.out.println("crouch");
 		}
+
+		else if(e.getKeyCode() == KeyEvent.VK_A){
+			drawing.attack1();
+			System.out.println("attack1");
+		}
+
+		else if(e.getKeyCode() == KeyEvent.VK_W){
+			drawing.attack2();
+			System.out.println("attack2");
+		}
+
+		else if(e.getKeyCode() == KeyEvent.VK_D){
+			drawing.attack3();
+			System.out.println("attack3");
+		}
+
+		else if(e.getKeyCode() == KeyEvent.VK_F){
+			drawing.slide();
+			System.out.println("slide");
+		}
+
+		else if(e.getKeyCode() == KeyEvent.VK_R){
+			drawing.spawnEnemy();
+		}
     }
 
     public void keyReleased(KeyEvent e){
