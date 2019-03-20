@@ -5,14 +5,11 @@ import java.awt.event.KeyEvent;
 public class MyFrame extends JFrame implements KeyListener{
 
 	static Draw drawing = new Draw();
+	static Sound sound = new Sound();
 
 	public void keyPressed(KeyEvent e){
-		if(e.getKeyCode() == KeyEvent.VK_UP){
-			drawing.moveUp();
-			System.out.println("pos: " + drawing.x + ", " + drawing.y);
-		}
 
-		else if(e.getKeyCode() == KeyEvent.VK_RIGHT){
+		if(e.getKeyCode() == KeyEvent.VK_RIGHT){
 			drawing.moveRight();
 			System.out.println("pos: " + drawing.x + ", " + drawing.y);
 		}
@@ -22,24 +19,9 @@ public class MyFrame extends JFrame implements KeyListener{
 			System.out.println("pos: " + drawing.x + ", " + drawing.y);
 		}
 
-		else if(e.getKeyCode() == KeyEvent.VK_DOWN){
-			drawing.moveDown();
-			System.out.println("pos: " + drawing.x + ", " + drawing.y);
-		}
-
-		else if(e.getKeyCode() == KeyEvent.VK_S){
-			drawing.smrslt();
-			System.out.println("smrslt");
-		}
-
 		else if(e.getKeyCode() == KeyEvent.VK_SPACE){
 			drawing.jump();
 			System.out.println("jump");
-		}
-
-		else if(e.getKeyCode() == KeyEvent.VK_C){
-			drawing.crouch();
-			System.out.println("crouch");
 		}
 
 		else if(e.getKeyCode() == KeyEvent.VK_A){
@@ -57,13 +39,13 @@ public class MyFrame extends JFrame implements KeyListener{
 			System.out.println("attack3");
 		}
 
-		else if(e.getKeyCode() == KeyEvent.VK_F){
-			drawing.slide();
-			System.out.println("slide");
-		}
-
 		else if(e.getKeyCode() == KeyEvent.VK_R){
 			drawing.spawnEnemy();
+		}
+
+		else if(e.getKeyCode() == KeyEvent.VK_S){
+			sound.play();
+			System.out.println("play sound");
 		}
     }
 
@@ -77,7 +59,7 @@ public class MyFrame extends JFrame implements KeyListener{
 	
 	public static void main(String args[]){
 		MyFrame gameFrame = new MyFrame();
-		gameFrame.setSize(500,333);
+		gameFrame.setSize(896,524);
 		gameFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		gameFrame.setVisible(true);
 		gameFrame.getContentPane().add(drawing);

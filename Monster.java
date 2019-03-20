@@ -3,16 +3,17 @@ import java.awt.Color;
 import java.awt.Graphics;
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
+import java.awt.Rectangle;
 import java.net.URL;
 import javax.swing.JComponent;
 
 public class Monster{
 	
-	public int xPos = 150;
-	public int yPos = 300;
+	public int xPos = 855;
+	public int yPos = 425;
 	public int width = 0;
 	public int height = 0;
-	public int life = 20;
+	public int health = 20;
 	public boolean idle = true;
 	public boolean alive = true;
 	public boolean contact = false;
@@ -75,7 +76,7 @@ public class Monster{
 						}
 					}
 
-					if(life<=0){
+					if(health<=0){
 						die(compPass);
 					}
 				}
@@ -126,5 +127,9 @@ public class Monster{
 			monThread.start();
 		}
 		alive = false;
+	}
+
+	public Rectangle getBounds(){
+		return (new Rectangle(xPos, yPos, image.getWidth(), image.getHeight()));
 	}
 }
